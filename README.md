@@ -1,4 +1,4 @@
-# Project--Object-Oriented-Programming-3# Durak Card Game
+# Durak Card Game
 ## COSC-2200-04 Object-Oriented Programming 3
 
 ### Team Members
@@ -15,8 +15,19 @@ A digital implementation of the Durak card game featuring:
 - Basic AI opponent
 - Game statistics tracking
 
+### Game Rules
+Durak is a traditional Russian card game played with a 36-card deck. Each player is dealt 6 cards, and the bottom card is turned over to display the trump suit for that hand. The objective is to avoid being the last player with cards in hand.
+
+### Project Requirements
+- **Game Logic (2-player):** Implement game rules for 2 players (1 human vs 1 AI).
+- **Basic Computer A.I.:** Implement AI logic for the computer-controlled player.
+- **Graphical User Interface:** Simple, clean, and functional design with at least one custom control.
+- **Object Oriented Concepts:** Implement complex code using OOP concepts (encapsulation, abstraction, polymorphism, inheritance).
+
 ### Setup Instructions
-[To be added]
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/Durak-Card-Game.git
 
 ### Project Structure
 - `/src` - Source code
