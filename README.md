@@ -24,10 +24,9 @@ Durak is a traditional Russian card game played with a 36-card deck. Each player
 - **Graphical User Interface:** Simple, clean, and functional design with at least one custom control.
 - **Object Oriented Concepts:** Implement complex code using OOP concepts (encapsulation, abstraction, polymorphism, inheritance).
 
-### Setup Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/Durak-Card-Game.git
+
+## Github
+https://github.com/bishwasadh/Durak-Card-Game.git
 
 ### Project Structure
 - `/src` - Source code
