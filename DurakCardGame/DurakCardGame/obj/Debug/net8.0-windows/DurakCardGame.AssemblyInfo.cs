@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DurakCardGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8effda93d0a8a218e6f0fa9c943bd7e195b5e5d1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f36b1e9ce6ae939329f2ec09a46ca97e25ec69d")]
 [assembly: System.Reflection.AssemblyProductAttribute("DurakCardGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DurakCardGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
