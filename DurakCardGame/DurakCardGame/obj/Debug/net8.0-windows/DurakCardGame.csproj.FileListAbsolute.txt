@@ -1,0 +1,17 @@
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.exe
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.deps.json
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.runtimeconfig.json
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.dll
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.pdb
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.GameForm.resources
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.csproj.GenerateResource.cache
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.GeneratedMSBuildEditorConfig.editorconfig
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.AssemblyInfoInputs.cache
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.AssemblyInfo.cs
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.csproj.CoreCompileInputs.cache
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.sourcelink.json
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.dll
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\refint\DurakCardGame.dll
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.pdb
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.genruntimeconfig.cache
+D:\Computer Programming\Semester 4\Object Oriented Programming 3\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\ref\DurakCardGame.dll
