@@ -11,7 +11,36 @@ namespace DurakCardGame
             InitializeComponent();
 
             // Test the Card class
-            TestCardClass();
+            TestDeckClass();
+        }
+
+        private void TestDeckClass()
+        {
+            // Create a new deck
+            Deck deck = new Deck();
+
+            string testResults = "Deck Class Test Results:\n\n";
+
+            // Show trump suit
+            testResults += $"Trump Suit: {deck.TrumpSuit}\n\n";
+
+            // Deal some cards and show them
+            testResults += "Dealing 6 cards:\n";
+            List<Card> dealtCards = deck.DealCards(6);
+            foreach (Card card in dealtCards)
+            {
+                testResults += $"- {card}\n";
+            }
+
+            // Show remaining cards
+            testResults += $"\nRemaining cards in deck: {deck.RemainingCards}\n";
+
+            // Show trump card
+            Card trumpCard = deck.GetTrumpCard();
+            testResults += $"Trump card (bottom of deck): {trumpCard}\n";
+
+            // Display results
+            MessageBox.Show(testResults, "Deck Class Test");
         }
 
         private void TestCardClass()
