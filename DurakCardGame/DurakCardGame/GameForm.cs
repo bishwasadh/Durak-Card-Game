@@ -11,7 +11,62 @@ namespace DurakCardGame
             InitializeComponent();
 
             // Test the Card class
-            TestDeckClass();
+            TestPlayerClass();
+        }
+
+        private void TestPlayerClass()
+        {
+            // Create a new deck and players
+            Deck deck = new Deck();
+            Player player1 = new Player("Player 1");
+            Player player2 = new Player("Computer");
+
+            string testResults = "Player Class Test Results:\n\n";
+
+            // Deal 6 cards to each player
+            player1.AddCards(deck.DealCards(6));
+            player2.AddCards(deck.DealCards(6));
+
+            // Show players' hands
+            testResults += $"{player1.Name}'s hand ({player1.CardCount} cards):\n";
+            foreach (Card card in player1.Hand)
+            {
+                testResults += $"- {card}\n";
+            }
+
+            testResults += $"\n{player2.Name}'s hand ({player2.CardCount} cards):\n";
+            foreach (Card card in player2.Hand)
+            {
+                testResults += $"- {card}\n";
+            }
+
+            testResults += $"\nTrump suit: {deck.TrumpSuit}\n\n";
+
+            // Test playing a card
+            if (player1.CardCount > 0)
+            {
+                Card playedCard = player1.PlayCard(0);
+                testResults += $"{player1.Name} plays: {playedCard}\n";
+                testResults += $"{player1.Name} now has {player1.CardCount} cards\n\n";
+
+                // Test if player2 can defend against this card
+                bool canDefend = player2.CanDefend(playedCard, deck.TrumpSuit);
+                testResults += $"Can {player2.Name} defend? {canDefend}\n";
+
+                if (canDefend)
+                {
+                    Card defendingCard = player2.FindDefendingCard(playedCard, deck.TrumpSuit);
+                    testResults += $"Best defending card: {defendingCard}\n";
+
+                    // Play the defending card
+                    player2.PlayCard(defendingCard);
+                    testResults += $"{player2.Name} plays {defendingCard} to defend\n";
+                    testResults += $"{player2.Name} now has {player2.CardCount} cards\n";
+                }
+            }
+
+            // Display results
+            MessageBox.Show(testResults, "Player Class Test");
         }
 
         private void TestDeckClass()
