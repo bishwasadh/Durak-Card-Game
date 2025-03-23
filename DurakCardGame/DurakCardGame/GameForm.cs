@@ -11,7 +11,63 @@ namespace DurakCardGame
             InitializeComponent();
 
             // Test the Card class
-            TestGameStateClass();
+            TestComputerPlayerClass();
+        }
+
+        private void TestComputerPlayerClass()
+        {
+            // Create a deck and players
+            Deck deck = new Deck();
+            Player humanPlayer = new Player("Human");
+            ComputerPlayer computerPlayer = new ComputerPlayer("Computer");
+
+            // Deal cards
+            humanPlayer.AddCards(deck.DealCards(6));
+            computerPlayer.AddCards(deck.DealCards(6));
+
+            string testResults = "ComputerPlayer Test Results:\n\n";
+
+            // Show game setup
+            testResults += "Game Setup:\n";
+            testResults += $"Trump Suit: {deck.TrumpSuit}\n\n";
+
+            testResults += "Human's hand:\n";
+            foreach (Card card in humanPlayer.Hand)
+            {
+                testResults += $"- {card}\n";
+            }
+
+            testResults += "\nComputer's hand:\n";
+            foreach (Card card in computerPlayer.Hand)
+            {
+                testResults += $"- {card}\n";
+            }
+
+            // Test computer attack decision
+            Card attackCard = computerPlayer.ChooseAttackingCard();
+            testResults += $"\nComputer chooses to attack with: {attackCard}\n";
+
+            // Test computer defense decision
+            if (humanPlayer.Hand.Count > 0)
+            {
+                Card humanAttack = humanPlayer.Hand[0];
+                testResults += $"Human attacks with: {humanAttack}\n";
+
+                Card defenseCard = computerPlayer.ChooseDefendingCard(humanAttack, deck.TrumpSuit);
+
+                if (defenseCard != null)
+                {
+                    testResults += $"Computer defends with: {defenseCard}\n";
+                    testResults += $"Is {defenseCard} stronger than {humanAttack} with trump {deck.TrumpSuit}? {defenseCard.IsStrongerThan(humanAttack, deck.TrumpSuit)}\n";
+                }
+                else
+                {
+                    testResults += "Computer cannot defend and would take the card\n";
+                }
+            }
+
+            // Display results
+            MessageBox.Show(testResults, "ComputerPlayer Test");
         }
 
         private void TestGameStateClass()
