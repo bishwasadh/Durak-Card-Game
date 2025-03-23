@@ -11,7 +11,73 @@ namespace DurakCardGame
             InitializeComponent();
 
             // Test the Card class
-            TestPlayerClass();
+            TestGameStateClass();
+        }
+
+        private void TestGameStateClass()
+        {
+            // Create two players
+            Player player1 = new Player("Player 1");
+            Player player2 = new Player("Computer");
+
+            // Create game state
+            GameState gameState = new GameState(player1, player2);
+
+            string testResults = "GameState Test Results:\n\n";
+
+            // Show initial game state
+            testResults += "Game Started\n";
+            testResults += $"Trump Suit: {gameState.TrumpSuit}\n";
+            testResults += $"Attacker: {gameState.Attacker.Name} ({gameState.Attacker.CardCount} cards)\n";
+            testResults += $"Defender: {gameState.Defender.Name} ({gameState.Defender.CardCount} cards)\n";
+            testResults += $"Current Phase: {gameState.CurrentPhase}\n\n";
+
+            testResults += "Attacker's hand:\n";
+            foreach (Card card in gameState.Attacker.Hand)
+            {
+                testResults += $"- {card}\n";
+            }
+
+            // Simulate playing one card
+            if (gameState.Attacker.CardCount > 0)
+            {
+                Card attackingCard = gameState.Attacker.Hand[0];
+                testResults += $"\nAttacker plays: {attackingCard}\n";
+
+                bool attackSuccessful = gameState.Attack(attackingCard);
+                testResults += $"Attack successful: {attackSuccessful}\n";
+                testResults += $"Current Phase: {gameState.CurrentPhase}\n\n";
+
+                // Check if defender can defend
+                Card defendingCard = null;
+                foreach (Card card in gameState.Defender.Hand)
+                {
+                    if (card.IsStrongerThan(attackingCard, gameState.TrumpSuit))
+                    {
+                        defendingCard = card;
+                        break;
+                    }
+                }
+
+                if (defendingCard != null)
+                {
+                    testResults += $"Defender defends with: {defendingCard}\n";
+                    bool defenseSuccessful = gameState.Defend(attackingCard, defendingCard);
+                    testResults += $"Defense successful: {defenseSuccessful}\n";
+                    testResults += $"Current Phase: {gameState.CurrentPhase}\n\n";
+                }
+                else
+                {
+                    testResults += "Defender cannot defend and takes the card\n";
+                    bool takeCardsSuccessful = gameState.TakeCards();
+                    testResults += $"Take cards successful: {takeCardsSuccessful}\n";
+                    testResults += $"Current Phase: {gameState.CurrentPhase}\n";
+                    testResults += $"Defender now has {gameState.Defender.CardCount} cards\n";
+                }
+            }
+
+            // Display results
+            MessageBox.Show(testResults, "GameState Test");
         }
 
         private void TestPlayerClass()
