@@ -108,6 +108,109 @@ namespace DurakCardGame.Controllers
             return false;
         }
 
-        
+        // Player ends turn
+        public bool PlayerEndTurn()
+        {
+            if (_gameState.CurrentPhase == GamePhase.Attack && _gameState.Attacker == _humanPlayer && _gameState.AttackingCards.Count > 0)
+            {
+                // End the round
+                EndRound();
+                return true;
+            }
+            return false;
+        }
+
+        // Computer's turn (attack or defend)
+        private void PerformComputerTurn()
+        {
+            // We would add a delay in a real UI, but for now, perform immediately
+
+            if (_gameState.CurrentPhase == GamePhase.Attack && _gameState.Attacker == _computerPlayer)
+            {
+                // Computer attacks
+                Card attackCard = _computerPlayer.ChooseAttackingCard();
+
+                if (attackCard != null)
+                {
+                    _gameState.Attack(attackCard);
+                    OnGameStateChanged();
+                }
+                else
+                {
+                    // No valid attack card, end turn
+                    EndRound();
+                }
+            }
+            else if (_gameState.CurrentPhase == GamePhase.Defense && _gameState.Defender == _computerPlayer)
+            {
+                // Computer defends
+                if (_gameState.AttackingCards.Count > _gameState.DefendingCards.Count)
+                {
+                    Card attackingCard = _gameState.AttackingCards[_gameState.DefendingCards.Count];
+
+                    Card defenseCard = _computerPlayer.ChooseDefendingCard(attackingCard, _gameState.TrumpSuit);
+
+                    if (defenseCard != null)
+                    {
+                        _gameState.Defend(attackingCard, defenseCard);
+                    }
+                    else
+                    {
+                        // Can't defend, take cards
+                        _gameState.TakeCards();
+                    }
+
+                    OnGameStateChanged();
+                }
+            }
+        }
+
+        // End the current round
+        private void EndRound()
+        {
+            // This should be implemented in GameState
+            // For now we'll simulate it
+
+            // Clear cards from table
+            _gameState.AttackingCards.Clear();
+            _gameState.DefendingCards.Clear();
+
+            // Switch attacker/defender if defender didn't take cards
+            if (_gameState.CurrentPhase == GamePhase.Attack)
+            {
+                Player temp = _gameState.Attacker;
+                // This is a simplification - you'd need to add this functionality to GameState
+                //_gameState.SetAttacker(_gameState.Defender);
+                //_gameState.SetDefender(temp);
+            }
+
+            // Deal cards to refill hands
+            while (_humanPlayer.CardCount < 6 && !_gameState.Deck.IsEmpty)
+            {
+                _humanPlayer.AddCard(_gameState.Deck.DealCard());
+            }
+
+            while (_computerPlayer.CardCount < 6 && !_gameState.Deck.IsEmpty)
+            {
+                _computerPlayer.AddCard(_gameState.Deck.DealCard());
+            }
+
+            // Check for game over
+            // This is a simplification - you'd need to add this functionality to GameState
+
+            OnGameStateChanged();
+
+            // If it's computer's turn next, perform its turn
+            if (_gameState.Attacker == _computerPlayer)
+            {
+                PerformComputerTurn();
+            }
+        }
+
+        // Raise event when game state changes
+        protected virtual void OnGameStateChanged()
+        {
+            GameStateChanged?.Invoke(this, EventArgs.Empty);
+        }
     }
 }
