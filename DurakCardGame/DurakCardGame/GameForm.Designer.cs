@@ -97,6 +97,7 @@
             btnNewGame.TabIndex = 7;
             btnNewGame.Text = "New Game";
             btnNewGame.UseVisualStyleBackColor = true;
+            btnNewGame.Click += btnNewGame_Click;
             // 
             // pnlDeck
             // 
@@ -122,6 +123,7 @@
             Name = "GameForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Durak Card Game";
+            Load += GameForm_Load;
             ResumeLayout(false);
         }
 
