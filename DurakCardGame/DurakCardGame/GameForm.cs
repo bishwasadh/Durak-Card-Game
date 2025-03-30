@@ -312,22 +312,6 @@ namespace DurakCardGame
             }
         }
 
-        private void btnTestCardControl_Click(object sender, EventArgs e)
-        {
-            // Create a test card
-            Card testCard = new Card(Card.Suit.Hearts, Card.Rank.Ace);
-
-            // Create a CardControl instance
-            CardControl cardControl = new CardControl();
-            cardControl.Card = testCard;
-            cardControl.Location = new Point(10, 10);
-
-            // Add it to the panel
-            pnlCardTest.Controls.Clear();
-            pnlCardTest.Controls.Add(cardControl);
-
-            // Show a message box to verify
-            MessageBox.Show($"Added a card control for {testCard}", "Card Control Test");
-        }
+        
     }
 }
