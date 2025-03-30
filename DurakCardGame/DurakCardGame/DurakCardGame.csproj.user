@@ -4,5 +4,8 @@
     <Compile Update="GameForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\CardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

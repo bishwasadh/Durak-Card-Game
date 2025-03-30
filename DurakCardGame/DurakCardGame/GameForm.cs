@@ -1,7 +1,8 @@
 using System;
 using System.Windows.Forms;
 using DurakCardGame.Controllers;
-using DurakCardGame.Models; // Add this to reference the Card class
+using DurakCardGame.Models;
+using DurakCardGame.Views;
 
 namespace DurakCardGame
 {
@@ -11,8 +12,7 @@ namespace DurakCardGame
         {
             InitializeComponent();
 
-            // Test the GameController
-            TestGameController();
+            
         }
 
         private void TestComputerPlayerClass()
@@ -270,6 +270,64 @@ namespace DurakCardGame
 
             // Initialize the game (this will trigger the event)
             controller.InitializeGame();
+        }
+
+        private void TestGameControllerWithAction()
+        {
+            GameController controller = new GameController();
+
+            // Subscribe to game state changes
+            controller.GameStateChanged += (sender, e) =>
+            {
+                string gameInfo = $"Game State Updated:\n\n" +
+                                 $"Phase: {controller.GameState.CurrentPhase}\n" +
+                                 $"Attacker: {controller.GameState.Attacker.Name} ({controller.GameState.Attacker.CardCount} cards)\n" +
+                                 $"Defender: {controller.GameState.Defender.Name} ({controller.GameState.Defender.CardCount} cards)\n" +
+                                 $"Trump Suit: {controller.GameState.TrumpSuit}\n" +
+                                 $"Attacking Cards: {controller.GameState.AttackingCards.Count}\n" +
+                                 $"Defending Cards: {controller.GameState.DefendingCards.Count}\n" +
+                                 $"Cards in Deck: {controller.GameState.Deck.RemainingCards}";
+
+                MessageBox.Show(gameInfo, "GameController Test");
+            };
+
+            // Initialize the game
+            controller.InitializeGame();
+
+            // If player is attacker, let's simulate an attack
+            if (controller.GameState.Attacker == controller.HumanPlayer &&
+                controller.GameState.CurrentPhase == GamePhase.Attack)
+            {
+                // Get the first card in player's hand
+                Card attackCard = controller.HumanPlayer.Hand[0];
+
+                // Show what card we're playing
+                MessageBox.Show($"Playing card: {attackCard}", "Player Attack");
+
+                // Perform attack
+                bool attackResult = controller.PlayerAttack(attackCard);
+
+                // Show result
+                MessageBox.Show($"Attack result: {attackResult}", "Attack Result");
+            }
+        }
+
+        private void btnTestCardControl_Click(object sender, EventArgs e)
+        {
+            // Create a test card
+            Card testCard = new Card(Card.Suit.Hearts, Card.Rank.Ace);
+
+            // Create a CardControl instance
+            CardControl cardControl = new CardControl();
+            cardControl.Card = testCard;
+            cardControl.Location = new Point(10, 10);
+
+            // Add it to the panel
+            pnlCardTest.Controls.Clear();
+            pnlCardTest.Controls.Add(cardControl);
+
+            // Show a message box to verify
+            MessageBox.Show($"Added a card control for {testCard}", "Card Control Test");
         }
     }
 }
