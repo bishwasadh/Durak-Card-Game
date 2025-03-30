@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using DurakCardGame.Controllers;
 using DurakCardGame.Models; // Add this to reference the Card class
 
 namespace DurakCardGame
@@ -10,8 +11,8 @@ namespace DurakCardGame
         {
             InitializeComponent();
 
-            // Test the Card class
-            TestComputerPlayerClass();
+            // Test the GameController
+            TestGameController();
         }
 
         private void TestComputerPlayerClass()
@@ -243,6 +244,32 @@ namespace DurakCardGame
 
             // Display results in a message box
             MessageBox.Show(testResults, "Card Class Test");
+        }
+
+        private void TestGameController()
+        {
+            GameController controller = new GameController();
+
+            string initialState = "Initial Game State:\n";
+
+            // Subscribe to game state changes
+            controller.GameStateChanged += (sender, e) =>
+            {
+                // Build detailed game state information
+                string gameInfo = $"Game State Updated:\n\n" +
+                                  $"Phase: {controller.GameState.CurrentPhase}\n" +
+                                  $"Attacker: {controller.GameState.Attacker.Name} ({controller.GameState.Attacker.CardCount} cards)\n" +
+                                  $"Defender: {controller.GameState.Defender.Name} ({controller.GameState.Defender.CardCount} cards)\n" +
+                                  $"Trump Suit: {controller.GameState.TrumpSuit}\n" +
+                                  $"Attacking Cards: {controller.GameState.AttackingCards.Count}\n" +
+                                  $"Defending Cards: {controller.GameState.DefendingCards.Count}\n" +
+                                  $"Cards in Deck: {controller.GameState.Deck.RemainingCards}";
+
+                MessageBox.Show(gameInfo, "GameController Test");
+            };
+
+            // Initialize the game (this will trigger the event)
+            controller.InitializeGame();
         }
     }
 }
