@@ -85,8 +85,18 @@ namespace DurakCardGame
             if (_gameController == null)
                 return;
 
+            // Calculate total width needed for all cards
+            int cardWidth = 80;
+            int cardGap = 5;
+            int cardSpacing = cardWidth + cardGap;
+            int totalCardsWidth = _gameController.HumanPlayer.Hand.Count * cardSpacing - cardGap;
+
+            // Calculate starting position to center cards
+            int startX = (pnlPlayerHand.Width - totalCardsWidth) / 2;
+            if (startX < 10) startX = 10; // Minimum margin
+
             // Position for first card
-            int xPosition = 10;
+            int xPosition = startX;
 
             // Create a card control for each card in player's hand
             foreach (Card card in _gameController.HumanPlayer.Hand)
@@ -100,7 +110,7 @@ namespace DurakCardGame
                 pnlPlayerHand.Controls.Add(cardControl);
 
                 // Move position for next card
-                xPosition += 85; // Space between cards
+                xPosition += cardSpacing;
             }
         }
 
@@ -118,8 +128,7 @@ namespace DurakCardGame
             if (clickedCard.Card == null)
                 return;
 
-            // Card is now selected/deselected by the CardControl itself
-            // No need for a message box
+           
         }
 
 
