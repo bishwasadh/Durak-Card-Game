@@ -146,5 +146,16 @@ namespace DurakCardGame.Views
                 default: return "?";
             }
         }
+        // Mouse event handler for clicking the card
+        protected override void OnMouseClick(MouseEventArgs e)
+        {
+            base.OnMouseClick(e);
+
+            // Toggle selection when clicked
+            IsSelected = !IsSelected;
+
+            // Raise the click event
+            OnClick(new EventArgs());
+        }
     }
 }
