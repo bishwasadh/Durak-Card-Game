@@ -33,9 +33,9 @@
             pnlPlayArea = new Panel();
             btnTakeCards = new Button();
             btnEndTurn = new Button();
-            lblStatus = new Button();
             btnNewGame = new Button();
             pnlDeck = new Panel();
+            lblStatus = new Label();
             SuspendLayout();
             // 
             // pnlPlayerHand
@@ -57,7 +57,7 @@
             // pnlPlayArea
             // 
             pnlPlayArea.BackColor = Color.DarkGreen;
-            pnlPlayArea.Location = new Point(201, 179);
+            pnlPlayArea.Location = new Point(226, 179);
             pnlPlayArea.Name = "pnlPlayArea";
             pnlPlayArea.Size = new Size(400, 200);
             pnlPlayArea.TabIndex = 3;
@@ -80,15 +80,6 @@
             btnEndTurn.Text = "End Turn";
             btnEndTurn.UseVisualStyleBackColor = true;
             // 
-            // lblStatus
-            // 
-            lblStatus.Location = new Point(21, 359);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(760, 44);
-            lblStatus.TabIndex = 6;
-            lblStatus.Text = "Game Status";
-            lblStatus.UseVisualStyleBackColor = true;
-            // 
             // btnNewGame
             // 
             btnNewGame.Location = new Point(635, 192);
@@ -102,19 +93,29 @@
             // pnlDeck
             // 
             pnlDeck.BackColor = Color.Green;
-            pnlDeck.Location = new Point(20, 200);
+            pnlDeck.Location = new Point(12, 162);
             pnlDeck.Name = "pnlDeck";
-            pnlDeck.Size = new Size(100, 150);
+            pnlDeck.Size = new Size(183, 112);
             pnlDeck.TabIndex = 8;
+            // 
+            // lblStatus
+            // 
+            lblStatus.BackColor = SystemColors.ButtonShadow;
+            lblStatus.Location = new Point(12, 363);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(764, 47);
+            lblStatus.TabIndex = 9;
+            lblStatus.Text = "Game Status";
+            lblStatus.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // GameForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(782, 553);
+            Controls.Add(lblStatus);
             Controls.Add(btnNewGame);
             Controls.Add(pnlDeck);
-            Controls.Add(lblStatus);
             Controls.Add(btnEndTurn);
             Controls.Add(btnTakeCards);
             Controls.Add(pnlPlayArea);
@@ -133,8 +134,8 @@
         private Panel pnlPlayArea;
         private Button btnTakeCards;
         private Button btnEndTurn;
-        private Button lblStatus;
         private Button btnNewGame;
         private Panel pnlDeck;
+        private Label lblStatus;
     }
 }

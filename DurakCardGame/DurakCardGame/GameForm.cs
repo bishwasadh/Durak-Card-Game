@@ -54,14 +54,19 @@ namespace DurakCardGame
             if (_gameController == null || _gameController.GameState == null)
                 return;
 
-            // Create more visible game info
-            string gameInfo = $"GAME STATUS: {_gameController.GameState.CurrentPhase}";
+
+            // Create more compact game info with separators
+            string gameInfo = $"STATUS: {_gameController.GameState.CurrentPhase} | ";
             gameInfo += $"\nAttacker: {_gameController.GameState.Attacker.Name}";
             gameInfo += $"\nDefender: {_gameController.GameState.Defender.Name}";
             gameInfo += $"\nTrump: {_gameController.GameState.TrumpSuit}";
+            gameInfo += $"Deck: {_gameController.GameState.Deck.RemainingCards}";
 
             // Update the label with clear text
             lblStatus.Text = gameInfo;
+
+            // Turn off auto-size for single line
+            lblStatus.AutoSize = false;
 
             // Make the label more visible
             lblStatus.BackColor = Color.White;
@@ -114,6 +119,7 @@ namespace DurakCardGame
             }
         }
 
+        
         // Handles player clicking on a card
         private void PlayerCard_Click(object? sender, EventArgs e)
         {
@@ -128,15 +134,45 @@ namespace DurakCardGame
             if (clickedCard.Card == null)
                 return;
 
-           
+            // Deselect all other cards first
+            foreach (Control control in pnlPlayerHand.Controls)
+            {
+                if (control is CardControl cardControl && cardControl != clickedCard)
+                {
+                    cardControl.IsSelected = false;
+                }
+            }
+
+            // Toggle selection on clicked card
+            clickedCard.IsSelected = !clickedCard.IsSelected;
+
+            // Update status text with selection info
+            UpdateStatusWithSelection(clickedCard.IsSelected ? clickedCard.Card : null);
         }
 
+        // Helper method to update status with selection info
+        private void UpdateStatusWithSelection(Card? selectedCard)
+        {
+            // Don't continue if game controller isn't initialized
+            if (_gameController == null || _gameController.GameState == null)
+                return;
 
+            // Create compact game info with separators
+            string gameInfo = $"STATUS: {_gameController.GameState.CurrentPhase} | ";
+            gameInfo += $"\nAttacker: {_gameController.GameState.Attacker.Name}";
+            gameInfo += $"\nDefender: {_gameController.GameState.Defender.Name}";
+            gameInfo += $"\nTrump: {_gameController.GameState.TrumpSuit}";
+            gameInfo += $"Deck: {_gameController.GameState.Deck.RemainingCards}";
 
+            // Add selected card info if there is one
+            if (selectedCard != null)
+            {
+                gameInfo += $"\nSelected: {selectedCard}";
+            }
 
-
-
-
+            // Update the label text
+            lblStatus.Text = gameInfo;
+        }
 
     }
 }
