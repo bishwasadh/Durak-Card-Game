@@ -76,6 +76,11 @@ namespace DurakCardGame
             // Display player's hand
             DisplayPlayerHand();
 
+            // Display computer's hand (face down)
+            DisplayComputerHand();
+
+
+
             // Force UI to refresh
             Application.DoEvents();
         }
@@ -172,6 +177,45 @@ namespace DurakCardGame
 
             // Update the label text
             lblStatus.Text = gameInfo;
+
+        }
+
+        // Handles the form closing event
+        private void DisplayComputerHand()
+        {
+            // Clear the panel first
+            pnlComputerHand.Controls.Clear();
+
+            // Exit if controller isn't initialized
+            if (_gameController == null)
+                return;
+
+            // Calculate total width needed for all cards
+            int cardWidth = 80;
+            int cardGap = 5;
+            int cardSpacing = cardWidth + cardGap;
+            int totalCardsWidth = _gameController.ComputerPlayer.CardCount * cardSpacing - cardGap;
+
+            // Calculate starting position to center cards
+            int startX = (pnlComputerHand.Width - totalCardsWidth) / 2;
+            if (startX < 10) startX = 10; // Minimum margin
+
+            // Position for first card
+            int xPosition = startX;
+
+            // Create a card control for each card in computer's hand (face down)
+            for (int i = 0; i < _gameController.ComputerPlayer.CardCount; i++)
+            {
+                CardControl cardControl = new CardControl();
+                cardControl.FaceUp = false; // Card is face down
+                cardControl.Location = new Point(xPosition, 10);
+
+                // Add to panel
+                pnlComputerHand.Controls.Add(cardControl);
+
+                // Move position for next card
+                xPosition += cardSpacing;
+            }
         }
 
     }

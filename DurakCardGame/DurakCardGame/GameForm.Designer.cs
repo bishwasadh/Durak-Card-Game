@@ -49,7 +49,7 @@
             // pnlComputerHand
             // 
             pnlComputerHand.BackColor = Color.ForestGreen;
-            pnlComputerHand.Location = new Point(101, 9);
+            pnlComputerHand.Location = new Point(101, 4);
             pnlComputerHand.Name = "pnlComputerHand";
             pnlComputerHand.Size = new Size(600, 150);
             pnlComputerHand.TabIndex = 2;
@@ -57,7 +57,7 @@
             // pnlPlayArea
             // 
             pnlPlayArea.BackColor = Color.DarkGreen;
-            pnlPlayArea.Location = new Point(226, 179);
+            pnlPlayArea.Location = new Point(221, 163);
             pnlPlayArea.Name = "pnlPlayArea";
             pnlPlayArea.Size = new Size(400, 200);
             pnlPlayArea.TabIndex = 3;
@@ -101,9 +101,9 @@
             // lblStatus
             // 
             lblStatus.BackColor = SystemColors.ButtonShadow;
-            lblStatus.Location = new Point(12, 363);
+            lblStatus.Location = new Point(12, 277);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(764, 47);
+            lblStatus.Size = new Size(203, 119);
             lblStatus.TabIndex = 9;
             lblStatus.Text = "Game Status";
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
