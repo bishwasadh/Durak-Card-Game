@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Bishwas Adhikari\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Bishwas Adhikari\\.nuget\\packages",
+      "C:\\Users\\desai\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\desai\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
