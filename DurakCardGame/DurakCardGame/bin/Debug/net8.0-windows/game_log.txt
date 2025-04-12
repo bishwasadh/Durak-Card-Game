@@ -1,0 +1,55 @@
+2025-04-11 19:19:18 - You attacked with Jack of Hearts
+2025-04-11 19:19:18 - Computer defended with King of Hearts
+2025-04-11 19:19:20 - You attacked with Seven of Hearts
+2025-04-11 19:19:20 - Computer defended with Eight of Spades
+2025-04-11 19:19:30 - You attacked with Ten of Spades
+2025-04-11 19:19:30 - Computer defended with Queen of Spades
+2025-04-11 19:19:32 - You attacked with Seven of Diamonds
+2025-04-11 19:19:32 - Computer defended with Eight of Diamonds
+2025-04-11 19:19:34 - You attacked with Six of Clubs
+2025-04-11 19:19:34 - Computer defended with Nine of Clubs
+2025-04-11 19:19:37 - You attacked with Queen of Diamonds
+2025-04-11 19:19:37 - Computer defended with Ace of Diamonds
+2025-04-11 19:19:39 - You attacked with King of Clubs
+2025-04-11 19:19:39 - Computer defended with Ace of Clubs
+2025-04-11 19:19:42 - You attacked with Ace of Hearts
+2025-04-11 19:19:42 - Computer defended with Six of Spades
+2025-04-11 19:19:44 - You attacked with Ten of Hearts
+2025-04-11 19:19:44 - Computer defended with Queen of Hearts
+2025-04-11 19:19:46 - You attacked with Queen of Clubs
+2025-04-11 19:19:46 - Computer defended with Seven of Spades
+2025-04-11 19:19:48 - You attacked with Jack of Clubs
+2025-04-11 19:19:48 - Computer defended with Nine of Spades
+2025-04-11 19:19:50 - You attacked with Nine of Hearts
+2025-04-11 19:19:50 - Computer defended with King of Spades
+2025-04-11 19:19:54 - You attacked with Six of Hearts
+2025-04-11 19:19:54 - Computer defended with Eight of Hearts
+2025-04-11 19:19:58 - You attacked with Eight of Clubs
+2025-04-11 19:19:58 - Computer defended with Ten of Clubs
+2025-04-11 19:20:00 - You attacked with Ten of Diamonds
+2025-04-11 19:20:00 - Computer defended with Jack of Diamonds
+2025-04-11 19:20:03 - You attacked with Jack of Spades
+2025-04-11 19:20:03 - Computer defended with Ace of Spades
+2025-04-11 19:20:05 - You attacked with Six of Diamonds
+2025-04-11 19:20:05 - Computer defended with King of Diamonds
+2025-04-11 19:20:08 - You attacked with Nine of Diamonds
+2025-04-11 19:20:12 - Computer takes all cards.
+2025-04-11 19:20:48 - You attacked with Nine of Diamonds
+2025-04-11 19:20:50 - Computer takes all cards.
+2025-04-11 19:21:00 - Player Wins 🎉
+2025-04-11 23:18:48 - You attacked with Nine of Clubs
+2025-04-11 23:18:49 - Computer takes all cards.
+2025-04-11 23:19:00 - You attacked with Ace of Hearts
+2025-04-11 23:19:00 - Computer defended with Eight of Clubs
+2025-04-11 23:19:04 - You attacked with Ten of Hearts
+2025-04-11 23:19:04 - Computer defended with Nine of Clubs
+2025-04-11 23:19:13 - You attacked with Seven of Diamonds
+2025-04-11 23:19:13 - Computer defended with Nine of Diamonds
+2025-04-11 23:19:17 - You attacked with King of Spades
+2025-04-11 23:19:17 - Computer defended with Jack of Clubs
+2025-04-11 23:24:45 - You attacked with Seven of Clubs
+2025-04-11 23:24:45 - Computer takes all cards.
+2025-04-11 23:24:54 - You attacked with Jack of Diamonds
+2025-04-11 23:24:54 - Computer defended with Queen of Diamonds
+2025-04-11 23:24:57 - You attacked with Eight of Diamonds
+2025-04-11 23:24:57 - Computer defended with King of Diamonds

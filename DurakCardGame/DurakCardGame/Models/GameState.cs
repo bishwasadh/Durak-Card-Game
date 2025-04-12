@@ -223,7 +223,7 @@ namespace DurakCardGame.Models
         #region Fields
         private readonly List<Card> _attackingCards = new();
         private readonly List<Card> _defendingCards = new();
-        private Deck _deck;
+        private Deck    _deck;
         private Player _attacker;
         private Player _defender;
         private GamePhase _currentPhase;
@@ -239,7 +239,7 @@ namespace DurakCardGame.Models
         public Player Defender => _defender;
         public GamePhase CurrentPhase => _currentPhase;
         public bool DefenderTookCards => _defenderTookCards;
-        public bool IsGameOver => _attacker.CardCount == 0 || _defender.CardCount == 0;
+        public bool IsGameOver => (_deck.IsEmpty && (_attacker.CardCount == 0 || _defender.CardCount == 0));
         #endregion
 
         #region Methods

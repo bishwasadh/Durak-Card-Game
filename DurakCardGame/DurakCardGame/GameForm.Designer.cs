@@ -39,6 +39,9 @@
             lblTrumpSuit = new Label();
             lblTurnStatus = new Label();
             btnRestartGame = new Button();
+            btnViewStats = new Button();
+            btnViewLog = new Button();
+            btnResetStatsAndLogs = new Button();
             SuspendLayout();
             // 
             // pnlPlayerHand
@@ -148,12 +151,45 @@
             btnRestartGame.UseVisualStyleBackColor = true;
             btnRestartGame.Click += btnRestartGame_Click_1;
             // 
+            // btnViewStats
+            // 
+            btnViewStats.Location = new Point(841, 174);
+            btnViewStats.Name = "btnViewStats";
+            btnViewStats.Size = new Size(152, 31);
+            btnViewStats.TabIndex = 13;
+            btnViewStats.Text = "View Stats";
+            btnViewStats.UseVisualStyleBackColor = true;
+            btnViewStats.Click += btnViewStats_Click;
+            // 
+            // btnViewLog
+            // 
+            btnViewLog.Location = new Point(25, 196);
+            btnViewLog.Name = "btnViewLog";
+            btnViewLog.Size = new Size(142, 31);
+            btnViewLog.TabIndex = 14;
+            btnViewLog.Text = "View Log";
+            btnViewLog.UseVisualStyleBackColor = true;
+            btnViewLog.Click += btnViewLog_Click;
+            // 
+            // btnResetStatsAndLogs
+            // 
+            btnResetStatsAndLogs.Location = new Point(25, 163);
+            btnResetStatsAndLogs.Name = "btnResetStatsAndLogs";
+            btnResetStatsAndLogs.Size = new Size(142, 29);
+            btnResetStatsAndLogs.TabIndex = 15;
+            btnResetStatsAndLogs.Text = "Reset Stats Logs";
+            btnResetStatsAndLogs.UseVisualStyleBackColor = true;
+            btnResetStatsAndLogs.Click += btnResetStatsAndLogs_Click;
+            // 
             // GameForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Green;
             ClientSize = new Size(1050, 672);
+            Controls.Add(btnResetStatsAndLogs);
+            Controls.Add(btnViewLog);
+            Controls.Add(btnViewStats);
             Controls.Add(btnRestartGame);
             Controls.Add(lblTurnStatus);
             Controls.Add(lblTrumpSuit);
@@ -165,6 +201,7 @@
             Controls.Add(pnlPlayArea);
             Controls.Add(pnlComputerHand);
             Controls.Add(pnlPlayerHand);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "GameForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Durak Card Game";
@@ -185,5 +222,8 @@
         private Label lblTrumpSuit;
         private Label lblTurnStatus;
         private Button btnRestartGame;
+        private Button btnViewStats;
+        private Button btnViewLog;
+        private Button btnResetStatsAndLogs;
     }
 }

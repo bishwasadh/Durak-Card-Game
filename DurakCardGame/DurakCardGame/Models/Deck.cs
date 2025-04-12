@@ -114,9 +114,13 @@ namespace DurakCardGame.Models
         #endregion
 
         #region Properties
-        public Card.Suit TrumpSuit => _trumpSuit;
+        //public Card.Suit TrumpSuit => _trumpSuit;
         public int RemainingCards => _cards.Count;
         public bool IsEmpty => !_cards.Any();
+
+        // ✅ ADDED: expose trump card and trump suit cleanly
+        public Card TrumpCard => _trumpCard;
+        public Card.Suit TrumpSuit => _trumpCard?.CardSuit ?? Card.Suit.Spades; // fallback
         #endregion
 
         #region Constructor
@@ -141,7 +145,7 @@ namespace DurakCardGame.Models
             }
 
             Shuffle();
-            SetTrump();
+            SetTrump(); // ✅ picks and stores a consistent trump card
         }
 
         public void Shuffle()
@@ -153,9 +157,12 @@ namespace DurakCardGame.Models
         {
             if (_cards.Count > 0)
             {
-                _trumpSuit = _cards.Last().CardSuit;
+                //_trumpSuit = _cards.Last().CardSuit;
+                _trumpCard = _cards.Last(); // store trump card reference
             }
         }
+
+        private Card _trumpCard;
 
         public Card DrawCard()
         {

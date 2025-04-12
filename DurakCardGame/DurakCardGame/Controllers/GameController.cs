@@ -266,6 +266,7 @@ namespace DurakCardGame.Controllers
             if (_gameState.CurrentPhase != GamePhase.Attack) return;
 
             _humanPlayer.RemoveCard(selectedCard);
+            GameLogger.LogCardAction(_humanPlayer.Name, selectedCard, "attacked with");
             _gameState.AddAttackCard(selectedCard);
 
             _gameState.SetPhase(GamePhase.Defense);
@@ -284,10 +285,14 @@ namespace DurakCardGame.Controllers
             {
                 _computerPlayer.RemoveCard(defense);
                 _gameState.AddDefenseCard(defense);
+                // ✅ Log the defense move
+                GameLogger.LogCardAction(_computerPlayer.Name, defense, "defended with");
                 _gameState.SetPhase(GamePhase.Resolve);
             }
             else
             {
+                // ✅ Log that the computer took all cards
+                 GameLogger.Log($"{_computerPlayer.Name} takes all cards.");
                 _gameState.DefenderTakesCards();
                 _gameState.SetPhase(GamePhase.Resolve);
             }
@@ -313,14 +318,32 @@ namespace DurakCardGame.Controllers
 
         public void EndTurn()
         {
+            //if (_gameState.IsGameOver)
+            //{
+            //    _gameState.SetPhase(GamePhase.GameOver);
+            //    GameStateChanged?.Invoke(this, EventArgs.Empty);
+            //    return;
+            //}
+
             if (_gameState.IsGameOver)
-            {
+            { 
+                // ✅ NEW: Determine winner and log it
+                bool playerWon = _computerPlayer.CardCount > 0 && _humanPlayer.CardCount == 0;
+
+                GameLogger.LogGameResult(playerWon);
+
+                if (playerWon) GameStats.RecordWin();
+                else GameStats.RecordLoss();
+
                 _gameState.SetPhase(GamePhase.GameOver);
                 GameStateChanged?.Invoke(this, EventArgs.Empty);
                 return;
             }
 
             FillHands();
+
+            // ❗ Important fix: Reset play area (attacks/defenses)
+            _gameState.ClearTable();
 
             _gameState.SwitchRoles();
             _gameState.StartNewRound(_gameState.Attacker, _gameState.Defender, _gameState.Deck);

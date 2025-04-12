@@ -1,182 +1,38 @@
-﻿//using System;
+﻿//using DurakCardGame.Models;
+//using DurakCardGame;
+//using Microsoft.VisualBasic.ApplicationServices;
+//using Microsoft.VisualBasic.Devices;
+//using Microsoft.VisualBasic;
+//using static System.Windows.Forms.AxHost;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
+//using System.Reflection.Metadata;
 //using System.Windows.Forms;
-//using DurakCardGame.Controllers;
-//using DurakCardGame.Models;
-//using DurakCardGame.Views;
 
-//namespace DurakCardGame
-//{
-//    public partial class GameForm : Form
-//    {
-//        // GameController manages the game logic
-//        private GameController? _gameController;
-
-//        public GameForm()
-//        {
-//            InitializeComponent();
-
-//        }
-
-//        private void GameForm_Load(object sender, EventArgs e)
-//        {
-//            InitializeGame();
-//        }
-
-//        // Initializes a new game and sets up the controller
-//        private void InitializeGame()
-//        {
-//            // Create a new game controller
-//            _gameController = new GameController();
-
-//            // Subscribe to game state changes to update UI
-//            _gameController.GameStateChanged += GameController_GameStateChanged;
-
-//            // Update the UI with initial game state
-//            UpdateUI();
-//        }
-
-//        // Event handler for game state changes
-//        private void GameController_GameStateChanged(object? sender, EventArgs e)
-//        {
-//            // Update the UI whenever game state changes
-//            UpdateUI();
-//        }
-
-//        private void btnNewGame_Click(object sender, EventArgs e)
-//        {
-//            InitializeGame();
-
-//        }
-//        // Updates the UI based on current game state
-//        private void UpdateUI()
-//        {
-//            // Don't continue if game controller isn't initialized
-//            if (_gameController == null || _gameController.GameState == null)
-//                return;
-
-
-//            // Create more compact game info with separators
-//            string gameInfo = $"STATUS: {_gameController.GameState.CurrentPhase} | ";
-//            gameInfo += $"\nAttacker: {_gameController.GameState.Attacker.Name}";
-//            gameInfo += $"\nDefender: {_gameController.GameState.Defender.Name}";
-//            gameInfo += $"\nTrump: {_gameController.GameState.TrumpSuit}";
-//            gameInfo += $"Deck: {_gameController.GameState.Deck.RemainingCards}";
-
-//            // Update the label with clear text
-//            lblStatus.Text = gameInfo;
-
-//            // Turn off auto-size for single line
-//            lblStatus.AutoSize = false;
-
-//            // Make the label more visible
-//            lblStatus.BackColor = Color.White;
-//            lblStatus.ForeColor = Color.Black;
-//            lblStatus.Font = new Font(lblStatus.Font, FontStyle.Bold);
-
-//            // Display player's hand
-//            DisplayPlayerHand();
-
-//            // Force UI to refresh
-//            Application.DoEvents();
-//        }
-
-//        // Displays the player's hand of cards
-//        private void DisplayPlayerHand()
-//        {
-//            // Clear the panel first
-//            pnlPlayerHand.Controls.Clear();
-
-//            // Exit if controller isn't initialized
-//            if (_gameController == null)
-//                return;
-
-//            // Calculate total width needed for all cards
-//            int cardWidth = 80;
-//            int cardGap = 5;
-//            int cardSpacing = cardWidth + cardGap;
-//            int totalCardsWidth = _gameController.HumanPlayer.Hand.Count * cardSpacing - cardGap;
-
-//            // Calculate starting position to center cards
-//            int startX = (pnlPlayerHand.Width - totalCardsWidth) / 2;
-//            if (startX < 10) startX = 10; // Minimum margin
-
-//            // Position for first card
-//            int xPosition = startX;
-
-//            // Create a card control for each card in player's hand
-//            foreach (Card card in _gameController.HumanPlayer.Hand)
-//            {
-//                CardControl cardControl = new CardControl();
-//                cardControl.Card = card;
-//                cardControl.Location = new Point(xPosition, 10);
-//                cardControl.Click += PlayerCard_Click;
-
-//                // Add to panel
-//                pnlPlayerHand.Controls.Add(cardControl);
-
-//                // Move position for next card
-//                xPosition += cardSpacing;
-//            }
-//        }
-
-
-//        // Handles player clicking on a card
-//        private void PlayerCard_Click(object? sender, EventArgs e)
-//        {
-//            // Check if sender is null
-//            if (sender == null)
-//                return;
-
-//            // Cast to CardControl
-//            CardControl clickedCard = (CardControl)sender;
-
-//            // Check if the card is set
-//            if (clickedCard.Card == null)
-//                return;
-
-//            // Deselect all other cards first
-//            foreach (Control control in pnlPlayerHand.Controls)
-//            {
-//                if (control is CardControl cardControl && cardControl != clickedCard)
-//                {
-//                    cardControl.IsSelected = false;
-//                }
-//            }
-
-//            // Toggle selection on clicked card
-//            clickedCard.IsSelected = !clickedCard.IsSelected;
-
-//            // Update status text with selection info
-//            UpdateStatusWithSelection(clickedCard.IsSelected ? clickedCard.Card : null);
-//        }
-
-//        // Helper method to update status with selection info
-//        private void UpdateStatusWithSelection(Card? selectedCard)
-//        {
-//            // Don't continue if game controller isn't initialized
-//            if (_gameController == null || _gameController.GameState == null)
-//                return;
-
-//            // Create compact game info with separators
-//            string gameInfo = $"STATUS: {_gameController.GameState.CurrentPhase} | ";
-//            gameInfo += $"\nAttacker: {_gameController.GameState.Attacker.Name}";
-//            gameInfo += $"\nDefender: {_gameController.GameState.Defender.Name}";
-//            gameInfo += $"\nTrump: {_gameController.GameState.TrumpSuit}";
-//            gameInfo += $"Deck: {_gameController.GameState.Deck.RemainingCards}";
-
-//            // Add selected card info if there is one
-//            if (selectedCard != null)
-//            {
-//                gameInfo += $"\nSelected: {selectedCard}";
-//            }
-
-//            // Update the label text
-//            lblStatus.Text = gameInfo;
-//        }
-
-
-//    }
-//}
+//*GameForm.cs - Main game interface that handles the UI and player interactions
+// * --------------------------------------------------------------------------
+// * Course: Object Oriented Programming 3
+// * Assignment: Durak Card Game Project
+// * Date: April 2024
+// * 
+// * Contributing Team Members:
+// *Bishwas Adhikari
+//* Harsh Patel
+// *  Aaryan Desai
+// * 
+// * Description:
+// *This form implements the main user interface for the Durak card game.
+// * It handles rendering of cards, game state visualization, and user
+// * interactions including card selection, turns, and game flow.The UI
+// * displays both player and computer hands, the playing area, deck information,
+// *and provides controls for game actions.
+// *
+// *Features:
+// *-Interactive card selection and gameplay
+// * -Visual representation of game elements(hands, play area, trump)
+// * -Game control buttons(Attack, Defense, Take Cards, End Turn)
+// * -Game state information display
+// * -New Game, Restart Game, Help, and Exit functionality
+// * *****************************************************************************/
 
 
 
@@ -187,6 +43,7 @@ using System.Windows.Forms;
 using DurakCardGame.Controllers;
 using DurakCardGame.Models;
 using DurakCardGame.Views;
+using System.Media;
 
 namespace DurakCardGame
 {
@@ -209,8 +66,12 @@ namespace DurakCardGame
             _gameController = new GameController();
             _gameController.GameStateChanged += GameController_GameStateChanged;
 
-            lblStatus.Text = "New Game Started.";
-            RenderAll();
+            //lblStatus.Text = "New Game Started.";
+
+            // ✅ Show updated stats in the status label
+            lblStatus.Text = $"🟢 New Game Started\nWins: {GameStats.Wins} | Losses: {GameStats.Losses}";
+
+            RenderAll(); // refresh full UI
         }
 
         private void GameController_GameStateChanged(object sender, EventArgs e)
@@ -218,11 +79,45 @@ namespace DurakCardGame
             RenderAll();
         }
 
+        //private void RenderAll()
+        //{
+        //    var game = _gameController.GameState;
+
+        //    lblTrumpSuit.Text = $"Trump Suit: {game.TrumpSuit}";
+        //    lblTurnStatus.Text = $"Turn: {game.CurrentPhase}";
+
+        //    lblStatus.Text = game.IsGameOver
+        //        ? "🎉 Game Over!"
+        //        : game.CurrentPhase switch
+        //        {
+        //            GamePhase.Attack => "Your move! Select a card to attack.",
+        //            GamePhase.Defense => "Computer is defending...",
+        //            GamePhase.Resolve => "Click 'End Turn' to continue.",
+        //            _ => "Waiting..."
+        //        };
+
+        //    RenderHand(pnlPlayerHand, _gameController.HumanPlayer, true);
+        //    RenderHand(pnlComputerHand, _gameController.ComputerPlayer, false);
+        //    RenderPlayArea();
+        //    RenderDeck();
+        //}
+
+
+        private void PlaySound(string path)
+        {
+            try
+            {
+                if (File.Exists(path))
+                    new SoundPlayer(path).Play();
+            }
+            catch { }
+        }
+
         private void RenderAll()
         {
             var game = _gameController.GameState;
 
-            lblTrumpSuit.Text = $"Trump Suit: {game.TrumpSuit}";
+            lblTrumpSuit.Text = $"Trump Suit: {game.Deck.TrumpCard}";
             lblTurnStatus.Text = $"Turn: {game.CurrentPhase}";
 
             lblStatus.Text = game.IsGameOver
@@ -235,11 +130,24 @@ namespace DurakCardGame
                     _ => "Waiting..."
                 };
 
+            // ✅ Game Over check: play win sound and show message
+            if (game.IsGameOver)
+            {
+                bool playerWon = _gameController.HumanPlayer.CardCount == 0;
+                PlaySound("win.wav");
+                MessageBox.Show(playerWon ? "🎉 You Win!" : "😢 You Lost!",
+                                "Game Over",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+
             RenderHand(pnlPlayerHand, _gameController.HumanPlayer, true);
             RenderHand(pnlComputerHand, _gameController.ComputerPlayer, false);
             RenderPlayArea();
             RenderDeck();
         }
+
+
 
         private void RenderHand(Panel panel, Player player, bool faceUp)
         {
@@ -265,6 +173,7 @@ namespace DurakCardGame
                 x += 80;
             }
         }
+
 
         private void RenderPlayArea()
         {
@@ -306,8 +215,10 @@ namespace DurakCardGame
         {
             pnlDeck.Controls.Clear();
 
-            var trumpCard = _gameController.GameState.Deck.DrawCards(1).FirstOrDefault();
+            //var trumpCard = _gameController.GameState.Deck.DrawCards(1).FirstOrDefault();
+            var trumpCard = _gameController.GameState.Deck.TrumpCard;
             if (trumpCard == null) return;
+
 
             var cardControl = new CardControl
             {
@@ -318,13 +229,14 @@ namespace DurakCardGame
             };
 
             pnlDeck.Controls.Add(cardControl);
+
         }
 
 
 
         private void btnEndTurn_Click_1(object sender, EventArgs e)
         {
-              
+
             if (_gameController.GameState.CurrentPhase == GamePhase.Resolve)
             {
                 _gameController.EndTurn();
@@ -358,5 +270,77 @@ namespace DurakCardGame
             }
 
         }
+
+        private void btnViewStats_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show($"📊 Stats:\nWins: {GameStats.Wins}\nLosses: {GameStats.Losses}",
+                "Game Stats",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+        }
+
+        private void btnViewLog_Click(object sender, EventArgs e)
+        {
+
+            //string log = System.IO.File.Exists("game_log.txt")
+            //? System.IO.File.ReadAllText("game_log.txt")
+            //: "No logs found yet.";
+
+            //MessageBox.Show(log.Length > 3000 ? log.Substring(log.Length - 3000) : log,
+            //                "Game Log (Recent)",
+            //                MessageBoxButtons.OK,
+            //                MessageBoxIcon.Information);
+
+            if (!System.IO.File.Exists("game_log.txt"))
+            {
+                MessageBox.Show("No logs found yet.", "Game Log", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var allLines = System.IO.File.ReadAllLines("game_log.txt");
+            var last50Lines = allLines.Reverse().Take(50).Reverse(); // ✅ Get last 50 lines in order
+
+            //string logText = string.Join(Environment.NewLine, last50Lines);
+            string logText = "📄 Last 50 Game Actions:\n\n" + string.Join(Environment.NewLine, last50Lines);
+
+
+            MessageBox.Show(logText, "Game Log (Last 50 Moves)", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void btnResetStatsAndLogs_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure you want to reset both stats and logs?\nThis cannot be undone.",
+                                 "Confirm Full Reset",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    System.IO.File.WriteAllLines("stats.txt", new[]
+                    {
+                "Wins:0",
+                "Losses:0",
+                $"LastReset:{DateTime.Now:yyyy-MM-dd HH:mm:ss}"
+            });
+
+                    GameStats.Load();
+
+                    if (System.IO.File.Exists("game_log.txt"))
+                        System.IO.File.Delete("game_log.txt");
+
+                    MessageBox.Show("Stats and Logs have been reset.", "Reset Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblStatus.Text = $"🟢 Stats Reset\nWins: {GameStats.Wins} | Losses: {GameStats.Losses}";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Something went wrong:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
-}
+} 

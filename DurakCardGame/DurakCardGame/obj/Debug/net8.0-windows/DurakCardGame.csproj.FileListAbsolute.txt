@@ -32,20 +32,20 @@ C:\Users\desai\Source\Repos\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debu
 C:\Users\desai\Source\Repos\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.pdb
 C:\Users\desai\Source\Repos\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.genruntimeconfig.cache
 C:\Users\desai\Source\Repos\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\ref\DurakCardGame.dll
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.exe
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.deps.json
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.runtimeconfig.json
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.dll
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.pdb
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.GameForm.resources
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.csproj.GenerateResource.cache
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.GeneratedMSBuildEditorConfig.editorconfig
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.AssemblyInfoInputs.cache
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.AssemblyInfo.cs
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.csproj.CoreCompileInputs.cache
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.sourcelink.json
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.dll
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\refint\DurakCardGame.dll
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.pdb
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.genruntimeconfig.cache
-D:\college\durham college\sem 4\oops\Github\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\ref\DurakCardGame.dll
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.exe
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.deps.json
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.runtimeconfig.json
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.dll
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\bin\Debug\net8.0-windows\DurakCardGame.pdb
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.GameForm.resources
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.csproj.GenerateResource.cache
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.AssemblyInfoInputs.cache
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.AssemblyInfo.cs
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.csproj.CoreCompileInputs.cache
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.sourcelink.json
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.dll
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\refint\DurakCardGame.dll
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.pdb
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\DurakCardGame.genruntimeconfig.cache
+C:\Users\patel\Downloads\Durak-Card-Game (1)\Durak-Card-Game\DurakCardGame\DurakCardGame\obj\Debug\net8.0-windows\ref\DurakCardGame.dll
